@@ -1,11 +1,22 @@
-body{
-   font-family: Arial, Helvetica, sans-serif;
-   box-sizing: border-box;
-   margin: 0;
-   background-color: #F9FAFB;
-   color: #111827;
+/* ===== GLOBAL RESET & FIX ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-/*header section style*/
+
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #F9FAFB;
+  color: #111827;
+}
+
+/* ===== Header ===== */
 header {
   background-color: #ffffff;
   padding: 25px 10%;
@@ -14,22 +25,22 @@ header {
   align-items: center;
   border-bottom: 1px solid #e5e5e5;
 }
+
 header h1 {
   font-size: 1.8rem;
   font-weight: 700;
   color: #222;
-  margin-bottom: 5px;
+  margin: 0;
 }
+
 header p {
-  font-size: 0.90rem;
+  font-size: 0.9rem;
   color: #666;
   letter-spacing: 1px;
   text-transform: uppercase;
-}
-header h1,
-header p {
   margin: 0;
 }
+
 /* ===== Navigation ===== */
 nav ul {
   list-style: none;
@@ -38,6 +49,7 @@ nav ul {
   margin: 0;
   padding: 0;
 }
+
 nav ul li a {
   text-decoration: none;
   font-size: 0.95rem;
@@ -46,7 +58,7 @@ nav ul li a {
   position: relative;
   transition: color 0.3s ease;
 }
-/* Hover underline effect */
+
 nav ul li a::after {
   content: "";
   position: absolute;
@@ -57,46 +69,41 @@ nav ul li a::after {
   background-color: #0077ff;
   transition: width 0.3s ease;
 }
+
 nav ul li a:hover {
   color: #0077ff;
 }
+
 nav ul li a:hover::after {
   width: 100%;
 }
 
-@media (max-width: 768px) {
-   header {
-     flex-direction: column;
-     text-align: center;
-     gap: 20px;
-   }
-   nav ul {
-      gap: 20px;
-   }
+/* ===== About Section ===== */
+#about {
+  padding: 60px 10%;
+  background-color: #f9f9f9;
 }
 
-/*about section style*/
-#about {
-   padding: 60px 10%;
-   background-color: #f9f9f9;
-}
 #about h2 {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 80px;
   color: #222;
 }
+
 .image-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 50px;
 }
+
 .about-img {
   width: 420px;
   height: 420px;
   flex-shrink: 0;
 }
+
 .about-img img {
   width: 100%;
   height: 100%;
@@ -113,67 +120,59 @@ nav ul li a:hover::after {
   text-align: justify;
 }
 
-@media (max-width: 768px) {
-   .image-wrapper {
-     flex-direction: column;
-     text-align: center;
-   }
-   .about-img {
-    width: 220px;
-    height: 220px;
-  }
-   .image-wrapper p {
-     max-width: 100%;
-   }
-}
-/*Skill Section Style*/
-#skills{
+/* ===== Skills ===== */
+#skills {
   padding: 80px 10%;
   background-color: #ffffff;
 }
+
 #skills h2 {
   text-align: center;
   font-size: 2.3rem;
   margin-bottom: 50px;
   color: #222;
 }
+
 #skills ul {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  align-items: center;
-  grid-gap: 25px;
+  gap: 25px;
   padding: 0;
   max-width: 900px;
   margin: 0 auto;
 }
+
 #skills ul li {
-   background-color: #f5f7fa;
-   padding: 18px 20px;
-   text-align: center;
-   font-size: 0.95rem;
-   font-weight: 600;
-   color: #333;
-   border-radius: 10px;
-   letter-spacing: 1px;
-   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f5f7fa;
+  padding: 18px 20px;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  border-radius: 10px;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 #skills ul li:hover {
-   transform: translateY(-6px);
-   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1)
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
 }
-/* ===== Education Section ===== */
+
+/* ===== Education ===== */
 #education {
   padding: 80px 10%;
   background-color: #f9f9f9;
 }
+
 #education h2 {
   text-align: center;
   font-size: 2.2rem;
   margin-bottom: 50px;
   color: #222;
 }
-/* Table */
+
 #education table {
   width: 100%;
   max-width: 900px;
@@ -182,53 +181,47 @@ nav ul li a:hover::after {
   background-color: #ffffff;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
 }
-/* Remove default border */
+
 #education table,
 #education th,
 #education td {
   border: none;
 }
-/* Caption */
+
 #education caption {
   caption-side: bottom;
   padding: 15px;
   font-size: 0.9rem;
   color: #666;
 }
-/*Table Heads*/
 
 #education thead th {
   padding: 20px;
   background-color: #0077ff;
   color: #ffffff;
 }
-/* Body cells */
+
 #education tbody td {
   padding: 15px;
   font-size: 0.95rem;
   color: #333;
   text-align: center;
 }
+
 #education tbody tr:nth-child(even) {
   background-color: #f4f6f8;
 }
-/* Hover effect */
+
 #education tbody tr:hover {
   background-color: #eef4ff;
 }
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  #education table {
-    font-size: 0.85rem;
-  }
-}
-/* ===== Contact Section ===== */
+
+/* ===== Contact ===== */
 #contact {
   padding: 80px 10%;
   background-color: #ffffff;
 }
 
-/* Title */
 #contact h2 {
   text-align: center;
   font-size: 2.2rem;
@@ -236,7 +229,6 @@ nav ul li a:hover::after {
   color: #222;
 }
 
-/* Form */
 #contact form {
   max-width: 500px;
   margin: 0 auto;
@@ -246,16 +238,13 @@ nav ul li a:hover::after {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
 }
 
-/* Labels */
 #contact label {
   font-size: 0.9rem;
   font-weight: 600;
   color: #333;
 }
 
-/* Inputs & Textarea */
-#contact input[type="text"],
-#contact input[type="email"],
+#contact input,
 #contact textarea {
   width: 100%;
   padding: 12px 14px;
@@ -264,48 +253,34 @@ nav ul li a:hover::after {
   border-radius: 6px;
   font-size: 0.95rem;
   outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Focus effect */
 #contact input:focus,
 #contact textarea:focus {
   border-color: #0077ff;
   box-shadow: 0 0 0 2px rgba(0, 119, 255, 0.15);
 }
 
-/* Textarea */
 #contact textarea {
   resize: vertical;
 }
 
-/* Submit Button */
 #contact input[type="submit"] {
-  width: 100%;
-  padding: 14px;
-  margin-top: 10px;
+  margin-top: 12px;
   background-color: #0077ff;
-  color: #ffffff;
+  color: #fff;
   border: none;
   border-radius: 6px;
+  padding: 14px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Hover effect */
 #contact input[type="submit"]:hover {
   background-color: #005fcc;
-  transform: translateY(-2px);
 }
 
-/* Responsive */
-@media (max-width: 480px) {
-  #contact form {
-    padding: 25px;
-  }
-}
 /* ===== Footer ===== */
 footer {
   background-color: #111;
@@ -313,11 +288,119 @@ footer {
   text-align: center;
   padding: 25px 10%;
   font-size: 0.9rem;
-  letter-spacing: 0.5px;
 }
 
-/* Highlighted Name */
+footer p {
+  margin: 0;
+}
+
 footer span {
   color: #0077ff;
   font-weight: 600;
+}
+
+/* ===== Mobile Responsive (Android & iOS) ===== */
+@media (max-width: 768px) {
+  .image-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .image-wrapper p {
+    max-width: 100%;
+  }
+}
+
+/* ===== Education Table Responsive Fix ===== */
+@media (max-width: 600px) {
+
+  #education table,
+  #education thead,
+  #education tbody,
+  #education th,
+  #education td,
+  #education tr {
+    display: block;
+    width: 100%;
+  }
+
+  #education caption {
+    display: flex;
+    min-width: 100%;
+  }
+
+  /* Hide table head */
+  #education thead {
+    display: none;
+  }
+
+  #education tbody tr {
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    padding: 15px;
+  }
+
+  #education tbody td {
+    text-align: left;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #eee;
+  }
+
+  #education tbody td:last-child {
+    border-bottom: none;
+  }
+
+  /* Label before each cell */
+  #education tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #0077ff;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.85rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  header,
+  #about,
+  #skills,
+  #education,
+  #contact,
+  footer {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  #about h2,
+  #skills h2,
+  #education h2,
+  #contact h2 {
+    font-size: 2rem;
+  }
+
+  #contact form {
+    padding: 25px 20px;
+  }
 }
